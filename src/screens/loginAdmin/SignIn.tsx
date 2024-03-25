@@ -71,7 +71,7 @@ const SignIn = () => {
 <Alert variant={"destructive"} className="absolute top-0 w-auto ">
   
   <AlertTitle>Erro!</AlertTitle>
-  <AlertDescription><HiExclamation />Email e/ou senha incorretos, tente novamente.</AlertDescription>
+  <AlertDescription><HiExclamation />Email e/ou senha incorretos, tente novamente ..</AlertDescription>
   </Alert>
         
       </div>
