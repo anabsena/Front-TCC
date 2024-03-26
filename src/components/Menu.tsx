@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { HiOutlineMenuAlt1, HiOutlineUser, HiOutlineX } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 export const Menu = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -48,7 +49,9 @@ export const Menu = () => {
               <HiOutlineX onClick={closeMenu} className="absolute top-2 left-2 text-3xl z-50" />
             </>
           )}
-          <HiOutlineUser className="text-xl" />
+           <Link to="/admin">
+            <HiOutlineUser className="text-xl" />
+          </Link>
         </div>
       )}
     </section>
