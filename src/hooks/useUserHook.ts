@@ -1,22 +1,25 @@
 import { userApi } from "../services/Api";
 
+
 function useUserHook() {
   const userControllerFindAll = async (
-    name: string,
-    page: number,
-    perPage: number
+    name?: string,
+    page?: number,
+    perPage?: number
   ) => {
     try {
+      console.log('name');
       const response = await userApi.userControllerFindAll(name, page, perPage);
+      console.log('hook', response)
 
-      if (response.status !== 200) {
-        throw new Error(response.statusText);
-      }
+      const { data, status, statusText} = response
+
+     
 
       return {
-        status: response.status,
-        message: response.statusText,
-        data: response.data,
+        status: status,
+        message: statusText,
+        data: data,
       };
     } catch (error: any) {
       console.error("Error fetching users:", error);

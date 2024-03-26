@@ -11,7 +11,7 @@ export default function PrivateRoute() {
     children: [
         {
             path: "*",
-            element: <Navigate to="/sign-in" />,
+            element: <Navigate to="/admin" />,
           },
           {
             path: '/projects',

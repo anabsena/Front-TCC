@@ -25,3 +25,23 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+
+# Client API - FRONT
+
+bash
+# install openapi-generator-cli
+$ pnpm install -g @openapitools/openapi-generator-cli
+
+# generator client localhost
+$ openapi-generator-cli generate -i http://localhost:3000/api-json -g typescript-axios -o src/services/api-back --skip-validate-spec
+
+# generator client api/localhost
+$ openapi-generator-cli generate -i https://dev-new-back.invicta.app.br/api-json -g typescript-axios -o src/client/api-back --skip-validate-spec
+
+
+
+
+# instalador do java jdk
+
+https://www.oracle.com/java/technologies/downloads/#jdk21-windows
