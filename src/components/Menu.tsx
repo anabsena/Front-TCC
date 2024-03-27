@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HiOutlineMenuAlt1, HiOutlinePhotograph, HiOutlineUser, HiOutlineX } from "react-icons/hi";
+import { HiOutlineFolderOpen, HiOutlineMenuAlt1, HiOutlineOfficeBuilding, HiOutlinePhotograph, HiOutlineUser, HiOutlineX } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 export const Menu = () => {
@@ -55,7 +55,11 @@ export const Menu = () => {
           </Link>
           <hr className="bg-[#D9B341] h-0.5 rounded-full border-none"/>
           <Link to="/projects">
-            <HiOutlinePhotograph className="text-3xl" />
+            <HiOutlineOfficeBuilding className="text-3xl" />
+          </Link>
+          <hr className="bg-[#D9B341] h-0.5 rounded-full border-none"/>
+          <Link to="/categorys">
+            <HiOutlineFolderOpen className="text-3xl" />
           </Link>
           </div> 
         </div>

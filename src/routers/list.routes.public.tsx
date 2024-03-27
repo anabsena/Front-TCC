@@ -1,7 +1,7 @@
 
 import { Navigate } from "react-router-dom";
 import { Home } from "../screens";
-import SignIn from "../screens/loginAdmin/SignIn";
+import SignIn from "../screens/Admin/loginAdmin/SignIn";
 
 
 export default function PublicRoute() {

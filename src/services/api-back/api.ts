@@ -42,6 +42,12 @@ export interface CategoryResponse {
      */
     'name'?: string;
     /**
+     * Nome da categoria
+     * @type {string}
+     * @memberof CategoryResponse
+     */
+    'description'?: string;
+    /**
      * 
      * @type {Array<ResponseProjectDto>}
      * @memberof CategoryResponse
@@ -79,6 +85,12 @@ export interface CreateCategoryDto {
      * @memberof CreateCategoryDto
      */
     'name': string;
+    /**
+     * Descrição da categoria
+     * @type {string}
+     * @memberof CreateCategoryDto
+     */
+    'description': string;
 }
 /**
  * 
@@ -286,6 +298,12 @@ export interface ResponseCategoryDto {
      */
     'name': string;
     /**
+     * Nome da categoria
+     * @type {string}
+     * @memberof ResponseCategoryDto
+     */
+    'description': string;
+    /**
      * 
      * @type {Array<ResponseProjectDto>}
      * @memberof ResponseCategoryDto
@@ -391,6 +409,12 @@ export interface UpdateCategoryDto {
      * @memberof UpdateCategoryDto
      */
     'name'?: string;
+    /**
+     * Nome da categoria
+     * @type {string}
+     * @memberof UpdateCategoryDto
+     */
+    'description'?: string;
 }
 /**
  * 
