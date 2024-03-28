@@ -5,13 +5,15 @@ function useProjectHook() {
   const projectControllerCreate = async (
     name: string,
     description: string,
-    especificDetails: string
+    especificDetails: string,
+    projectCategoryId:string
   ) => {
     try {
     const response = await projectApi.projectControllerCreate(
       {name,
       description,
-      especificDetails}
+      especificDetails,
+    projectCategoryId}
     )
     const { data, status, statusText} = response
 

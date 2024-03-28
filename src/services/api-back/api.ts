@@ -116,6 +116,12 @@ export interface CreateProjectDto {
      * @memberof CreateProjectDto
      */
     'especificDetails': string;
+    /**
+     * id da categoria
+     * @type {string}
+     * @memberof CreateProjectDto
+     */
+    'projectCategoryId': string;
 }
 /**
  * 
