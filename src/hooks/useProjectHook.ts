@@ -61,11 +61,37 @@ function useProjectHook() {
       };
     }
   };
+  const projectControllerFindOne = async (
+    id:string
+  ) => {
+    try {
+      const response = await projectApi.projectControllerFindOne(id);
+
+      const { data, status, statusText} = response
+
+     
+
+      return {
+        status: status,
+        message: statusText,
+        data: data,
+      };
+    } catch (error: any) {
+      console.error("Error fetching users:", error);
+
+      return {
+        status: "error",
+        message: error.message,
+        data: null,
+      };
+    }
+  };
  
 
   return {
     projectControllerCreate,
-    projectControllerFindAll
+    projectControllerFindAll,
+    projectControllerFindOne
   };
 }
 

@@ -56,6 +56,9 @@ const ListProjectsScreen = () => {
   const handleClickNewProject =()=> {
     navigate('/new-project')
   }
+  const handleClickViewProject =(projectId)=> {
+    navigate(`/project?id=${projectId} `)
+  }
 
   const filteredProjects = projects.filter(project => 
     //@ts-ignore
@@ -87,7 +90,7 @@ const ListProjectsScreen = () => {
       </div>
       {currentProjects.map((project) => (
         //@ts-ignore
-        <div key={project.id} className="bg-gradient-to-r from-[#636BA6] to-[#1E1D40] w-full rounded-xl p-4 flex gap-4 mt-4 items-center justify-between">
+        <div key={project.id}  onClick={() => handleClickViewProject(project.id)} className="bg-gradient-to-r cursor-pointer from-[#636BA6] to-[#1E1D40] w-full rounded-xl p-4 flex gap-4 mt-4 items-center justify-between">
           <div className="flex gap-4 ">
             <HiOutlineOfficeBuilding className="text-6xl text-[#D9B341]"/>
             <div>

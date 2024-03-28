@@ -27,19 +27,16 @@ const CreateProjectScreen = () => {
     const allDetails = [especificDetails, ...details];
     const especificDetailsString = allDetails.join('|');
     const response = await projectControllerCreate(name, description, especificDetailsString, projectCategoryId);
-    if (response?.status === 'success') {
-      console.log(response);
-      return response.data.id;  // Retornando o projectId
+    console.log(response);
+    if (response?.status === 201 && response.data?.id) {
+      await photosProject(response.data?.id)
     }
-    return null;
   };
 
-  const photosProject = async (projectId) => {
+  const photosProject = async (projectId: string) => {
+    console.log('teste', selectedImages)
     for (const image of selectedImages) {
-      const formData = new FormData();
-      formData.append('image', image);
-
-      const response = await photoControllerCreate(projectId, formData);
+      const response = await photoControllerCreate(projectId, image);
       if (response?.status === 'success') {
         console.log(response);
       }

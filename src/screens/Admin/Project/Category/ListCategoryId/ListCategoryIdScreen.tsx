@@ -8,8 +8,6 @@ const ListCategoryIdScreen = () => {
   const { categoryControllerFindOne } = useCategoryHook();
   const [projects, setProjects] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [projectsPerPage] = useState(10);
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const navigate = useNavigate();
@@ -37,7 +35,7 @@ const ListCategoryIdScreen = () => {
 
   const handleSearchChange = (event: any) => {
     setSearchTerm(event.target.value);
-    setCurrentPage(1);
+
   };
 
   const handleOpenModal = (project: any) => {
@@ -50,9 +48,6 @@ const ListCategoryIdScreen = () => {
     setShowModal(false);
   };
 
-  const paginate = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-  };
 
   return (
     <div className="w-full h-full flex flex-col items-center p-8">
@@ -105,19 +100,7 @@ const ListCategoryIdScreen = () => {
           </div>
         </div>
       ))}
-      {projects.length > projectsPerPage && (
-        <div className="mt-4">
-          {Array.from({ length: Math.ceil(projects.length / projectsPerPage) }, (_, i) => i + 1).map((page) => (
-            <button 
-              key={page} 
-              onClick={() => paginate(page)} 
-              className={`mx-1 p-2 rounded-md ${currentPage === page ? 'bg-[#636BA6] text-white' : 'bg-[#1E1D40] text-[#F2F4FF]'}`}
-            >
-              {page}
-            </button>
-          ))}
-        </div>
-      )}
+      
     </div>
   );
 };

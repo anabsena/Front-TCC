@@ -94,15 +94,15 @@ const ListCategoryScreen = () => {
       </div>
       {currentCategories.map((category: any) => (
         //@ts-ignore
-        <div key={category.id}  onClick={() => handleCategoryClick(category.id)} className="bg-gradient-to-r cursor-pointer from-[#636BA6] to-[#1E1D40] w-full rounded-xl p-4 flex gap-4 mt-4 items-center justify-between">
+        <div key={category.id}  onClick={() => handleCategoryClick(category.id)} className="bg-gradient-to-r cursor-pointer from-[#B4B9E0] to-[#636BA6] w-full rounded-xl p-4 flex gap-4 mt-4 items-center justify-between">
           <div className="flex gap-4 ">
-            <HiOutlineTag className="text-6xl text-[#D9B341]"/>
+            <HiOutlineTag className="text-6xl text-[#08081A]"/>
             <div>
-              <h1 className="text-xl text-[#F2F4FF] font-bold" style={{ fontFamily: "Adam, sans-serif" }}>
+              <h1 className="text-xl text-secondary font-bold" style={{ fontFamily: "Adam, sans-serif" }}>
                 {/* @ts-ignore */}
                 Nome: {category.name}
               </h1>
-              <h1 className="text-md text-[#F2F4FF]" style={{ fontFamily: "Mulish, sans-serif" }}>
+              <h1 className="text-md text-secondary" style={{ fontFamily: "Mulish, sans-serif" }}>
                 {/* @ts-ignore */}
                 Descrição: {category.description}
               </h1>

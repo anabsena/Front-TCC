@@ -6,6 +6,8 @@ import CreateCategory from "../screens/Admin/Project/Category/CreateCategory/Cre
 import ListCategory from "../screens/Admin/Project/Category/ListCategory/ListCategory";
 import ListCategoryId from "../screens/Admin/Project/Category/ListCategoryId/ListCategoryId";
 import { Home } from "../screens";
+import NewUser from "../screens/Admin/User/NewUser/NewUser";
+import ViewProject from "../screens/Admin/Project/ViewProject/viewProject";
 
 export default function PrivateRoute() {
   return {
@@ -41,6 +43,14 @@ export default function PrivateRoute() {
           {
             path: '/home',
             element: <Home/>,
+          },
+          {
+            path: '/new-user',
+            element: <NewUser/>,
+          },
+          {
+            path: '/project',
+            element: <ViewProject/>,
           }
       
     ]
