@@ -17,7 +17,6 @@ const CreateProjectScreen = () => {
   const [namePlaceholder, setNamePlaceholder] = useState("Nome do projeto");
   const [descriptionPlaceholder, setDescriptionPlaceholder] = useState("Descrição");
   const [especificDetailsPlaceholder, setEspecificDetailsPlaceholder] = useState("Detalhes específicos");
-  const [image, setImage] = useState(null);
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
   const [imageUrls, setImageUrls] = useState([]);
   const { projectControllerCreate } = useProjectHook();
@@ -36,9 +35,14 @@ const CreateProjectScreen = () => {
   };
 
   const photosProject = async (projectId) => {
-    const response = await photoControllerCreate(projectId, selectedImages)
-    if (response?.status === 'success') {
-      console.log(response);
+    for (const image of selectedImages) {
+      const formData = new FormData();
+      formData.append('image', image);
+
+      const response = await photoControllerCreate(projectId, formData);
+      if (response?.status === 'success') {
+        console.log(response);
+      }
     }
   }
 
@@ -100,9 +104,10 @@ const CreateProjectScreen = () => {
       await photosProject(projectId);
     }
   }
+
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
-    setProjectCategoryId(e.target.value);  // Atualizado aqui
+    setProjectCategoryId(e.target.value);
   };
 
   return (
@@ -169,7 +174,7 @@ const CreateProjectScreen = () => {
                   value={detail}
                   onChange={(e) => handleDetailChange(index, e.target.value)}
                   onFocus={() => handleFocus(setEspecificDetailsPlaceholder)}
-                onBlur={(e)=> handleBlur(setEspecificDetailsPlaceholder, e.target.value)}
+                  onBlur={(e)=> handleBlur(setEspecificDetailsPlaceholder, e.target.value)}
                   className="p-4 bg-transparent border border-primary rounded-xl text-primary w-full"
                 />
                 <Button  onClick={() => removeDetailInput(index)} variant={"destructive"}><HiOutlineMinus className="text-xl"/></Button>
@@ -182,7 +187,7 @@ const CreateProjectScreen = () => {
             <select
               id="category"
               value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
+              onChange={handleCategoryChange}
               className="p-4 bg-transparent border border-primary text-primary w-full rounded-xl focus:outline-none"
             >
               <option value="">Selecione uma categoria</option>

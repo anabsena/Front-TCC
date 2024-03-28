@@ -48,7 +48,7 @@ export interface CategoryResponse {
      */
     'description'?: string;
     /**
-     * 
+     * Projetos associados à categoria
      * @type {Array<ResponseProjectDto>}
      * @memberof CategoryResponse
      */
@@ -265,6 +265,12 @@ export interface ProjectResponse {
      * @memberof ProjectResponse
      */
     'Photo'?: Array<ResponsePhotoDto>;
+    /**
+     * Categoria id
+     * @type {string}
+     * @memberof ProjectResponse
+     */
+    'projectCategoryId'?: string;
 }
 /**
  * 
@@ -310,7 +316,7 @@ export interface ResponseCategoryDto {
      */
     'description': string;
     /**
-     * 
+     * Projetos associados à categoria
      * @type {Array<ResponseProjectDto>}
      * @memberof ResponseCategoryDto
      */
@@ -377,6 +383,12 @@ export interface ResponseProjectDto {
      * @memberof ResponseProjectDto
      */
     'Photo': Array<ResponsePhotoDto>;
+    /**
+     * Categoria id
+     * @type {string}
+     * @memberof ResponseProjectDto
+     */
+    'projectCategoryId': string;
 }
 /**
  * 

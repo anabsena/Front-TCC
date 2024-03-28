@@ -9,6 +9,7 @@ const ListCategoryScreen = () => {
   const { categoryControllerFindAll } = useCategoryHook();
 
   const [category, setCategory] = useState([]);
+  const [categoryId, setCategoryId] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [categoriesPerPage] = useState(10);
@@ -24,6 +25,8 @@ const ListCategoryScreen = () => {
         if (response.status === 200) {
           //@ts-ignore
           setCategory(response.data.data);
+          setCategoryId(response.data.data.id);
+          console.log(response.data.data.id);
         } else {
           console.error("Error fetching categories:", response.message);
         }
@@ -57,6 +60,9 @@ const ListCategoryScreen = () => {
   const handleClickNewCategory = () => {
     navigate('/new-category');
   };
+  const handleCategoryClick = (categoryId) => {
+    navigate(`/categoryId?id=${categoryId}`);
+  };
 
   const filteredCategories = category.filter((category: any) =>
     //@ts-ignore
@@ -88,7 +94,7 @@ const ListCategoryScreen = () => {
       </div>
       {currentCategories.map((category: any) => (
         //@ts-ignore
-        <div key={category.id} className="bg-gradient-to-r from-[#636BA6] to-[#1E1D40] w-full rounded-xl p-4 flex gap-4 mt-4 items-center justify-between">
+        <div key={category.id}  onClick={() => handleCategoryClick(category.id)} className="bg-gradient-to-r cursor-pointer from-[#636BA6] to-[#1E1D40] w-full rounded-xl p-4 flex gap-4 mt-4 items-center justify-between">
           <div className="flex gap-4 ">
             <HiOutlineTag className="text-6xl text-[#D9B341]"/>
             <div>

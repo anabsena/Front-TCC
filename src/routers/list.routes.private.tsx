@@ -4,6 +4,8 @@ import ListAdmin from "../screens/Admin/User/listAdmin.tsx/ListAdmin";
 import CreateProject from "../screens/Admin/Project/CreateProject/CreateProject";
 import CreateCategory from "../screens/Admin/Project/Category/CreateCategory/CreateCategory";
 import ListCategory from "../screens/Admin/Project/Category/ListCategory/ListCategory";
+import ListCategoryId from "../screens/Admin/Project/Category/ListCategoryId/ListCategoryId";
+import { Home } from "../screens";
 
 export default function PrivateRoute() {
   return {
@@ -31,6 +33,14 @@ export default function PrivateRoute() {
           {
             path: '/categorys',
             element: <ListCategory/>,
+          },
+          {
+            path: '/categoryId',
+            element: <ListCategoryId/>,
+          },
+          {
+            path: '/home',
+            element: <Home/>,
           }
       
     ]
