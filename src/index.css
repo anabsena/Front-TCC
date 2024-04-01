@@ -99,6 +99,13 @@
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Alice';
+  src: local('Alice-Regular'),  
+       url('/fonts/Alice/Alice-Regular.ttf') format('truetype');
+  font-weight: medium;
+  font-style: normal;
+}
 
 @layer base {
   * {
