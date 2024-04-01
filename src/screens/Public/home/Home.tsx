@@ -93,7 +93,7 @@ export const Home = (): JSX.Element => {
         <div className="flex w-full h-full items-center justify-center gap-10 3xl:gap-16">
           <img src="img/Img-escritorio.png" className="z-30 w-1/2" alt="" />
           <img src="img/bg-sobre.svg" className="w-2/5 absolute right-0 top-1/4" alt="" />
-          <p className="z-30 w-72 3xl:w-96 xl:mt-12 2xl:mt-64 text-sm">
+          <p className="z-30 w-72 3xl:w-96 xl:mt-32 2xl:mt-64 text-sm">
             There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available. There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available
           </p>
         </div>
@@ -108,7 +108,7 @@ export const Home = (): JSX.Element => {
         <div className="flex flex-col w-full h-full items-center justify-center gap-10 ">
           <img src="img/Img-escritorio.png" className="z-30 w-full mt-16" alt="" />
           <img src="img/bg-sobre.svg" className="w-full absolute top-1/2" alt="" />
-          <div className="z-30 w-full flex justify-start pl-10 pt-2">
+          <div className="z-30 w-full flex justify-start pl-10 ">
 
 
             <p className=" w-56 text-[12px] ">
@@ -126,7 +126,7 @@ export const Home = (): JSX.Element => {
           <img src="img/separador-title.svg" alt="" />
         </div>
       </div>
-      <div className="w-full md:h-[120vh] bg-[#9BA1D1]  flex flex-col items-center justify-center relative sm:gap-12">
+      <div className="w-full  bg-[#9BA1D1]  flex flex-col items-center justify-center relative sm:gap-12">
         <img src="img/Icon-project.svg" className=" z-30 absolute top-0 right-0 hidden md:flex" alt="" />
         <img src="img/Icon-planta.svg" className=" z-30 absolute bottom-2 left-8 hidden md:flex" alt="" />
         <img src="img/Detalhes.svg" className=" z-30 absolute hidden w-56 -mt-12 md:flex" alt="" />
